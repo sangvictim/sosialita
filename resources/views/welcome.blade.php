@@ -19,8 +19,14 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
     </head>
-    <body class="antialiased">
+    <body class="antialiased">   
+    <div id="g_id_onload"
+        data-client_id="{{ env('GOOGLE_CLIENT_ID_1_TAP') }}"
+        data-context="signin"
+        data-login_uri="http://localhost:8000/">
+    </div>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
