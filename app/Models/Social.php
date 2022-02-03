@@ -9,9 +9,14 @@ class Social extends Model
 {
     use HasFactory;
 
-    public function user() {
+    protected $table = 'socials';
+
+    protected $fillable = ['user_id', 'provider_name', 'provider_id'];
+
+
+    public function user()
+    {
 
         return $this->belongsTo(User::class);
-
     }
 }
