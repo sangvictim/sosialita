@@ -15,9 +15,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/**
+ * Route ini untuk landing page
+ */
+Route::domain('localhost')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
+
+/**
+ * Route ini untuk client area
+ */
+Route::domain('client.localhost.com')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+});
+
 
 Auth::routes();
 
